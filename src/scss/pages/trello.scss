@@ -1,0 +1,89 @@
+// styles for the main page
+.container {
+  max-width: 1225px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+body {
+  background: url(../assets/images/main-bg.png) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+//header
+
+.header {
+  padding: 10px;
+  background: rgba(14, 77, 164, 0.7);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  .logo {
+    font-family: Inter-SemiBold;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0.25px;
+    color: rgba(255, 255, 255, 0.3);
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.5);
+      transition: 0.5s;
+    }
+  }
+}
+
+//main
+
+.cards-list {
+  display: flex;
+  justify-content: space-between;
+  // flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.card {
+  width: 360px;
+  height: max-content;
+  padding: 15px 15px 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $main-card_color;
+  border-radius: 12px;
+  overflow: scroll;
+  flex: 0 0 auto;
+
+  &__info {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__title {
+    font-family: Roboto-Bold;
+    font-size: 24px;
+    color: $text_color;
+  }
+
+  .tasks__counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: $text_color;
+    font-family: Roboto-Regular;
+    font-size: 10px;
+    color: $text-btn_color;
+  }
+}
+
+.card:not(:last-of-type) {
+  margin-right: 20px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trello</title>
+    <link href="dist/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="logo" href="#">TRELLO</a>
+    </header>
+
+    <main>
+      <div class="container">
+        <div id="cardList" class="cards-list">
+          <div id="todo" class="card">
+            <div class="card__info">
+              <h2 class="card__title">To do</h2>
+              <div class="tasks__counter">
+                <p id="todoCounter" class="tasks-counter__text">0</p>
+              </div>
+              <button class="button clear-button button--blue">
+                <span class="button__content"
+                  ><img src="./assets/icons/bin.svg" />Clear</span
+                >
+              </button>
+            </div>
+
+            <div id="todoTasks" class="tasks"></div>
+            <button id="new-task" class="button button--white">New task</button>
+          </div>
+
+          <div id="inProgress" class="card">
+            <div class="card__info">
+              <h2 class="card__title">In progress</h2>
+              <div class="tasks__counter">
+                <p id="inProgressCounter" class="tasks-counter__text">0</p>
+              </div>
+              <button class="button clear-button button--blue">
+                <span class="button__content"
+                  ><img src="./assets/icons/bin.svg" />Clear</span
+                >
+              </button>
+            </div>
+            <div id="inProgressTasks" class="tasks"></div>
+          </div>
+
+          <div id="done" class="card">
+            <div class="card__info">
+              <h2 class="card__title">Done</h2>
+              <div class="tasks__counter">
+                <p id="doneCounter" class="tasks-counter__text">0</p>
+              </div>
+              <button class="button clear-button button--blue">
+                <span class="button__content"
+                  ><img src="./assets/icons/bin.svg" />Clear</span
+                >
+              </button>
+            </div>
+            <div id="doneTasks" class="tasks"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="modals" class="modals">
+      <div id="modalClear" class="modal modal-clear-tasks closed">
+        <p class="modal-clear-tasks__title">
+          Clear ALL the <br />
+          tasks?
+        </p>
+        <div class="buttons-block">
+          <button id="buttonClearAll" class="button button--green">Yes</button>
+          <button class="button button--red cancel-button">NO</button>
+        </div>
+      </div>
+
+      <div id="newTask" class="modal modal-new-task closed">
+        <input
+          id="titleInput"
+          type="text"
+          name="title-input"
+          class="input title-input"
+          placeholder="Name"
+        />
+        <select
+          id="userNameSelect"
+          name="user-name-select"
+          placeholder="Name"
+          class="input"
+
+        >
+        <option></option>
+      </select>
+        <input id="dateInput" type="date" name="date-input" class="input" />
+        <textarea
+          id="descriptionInput"
+          name="description-input"
+          cols="30"
+          rows="10"
+          class="description-input"
+          placeholder="Enter task desription here"
+        ></textarea>
+        <div class="buttons-block">
+          <button id="buttonSubmit" class="button button--green">Submit</button>
+          <button class="button button--red cancel-button">
+            <span class="button__content"
+              ><img src="./assets/icons/cancel.svg" /> Cancel</span
+            >
+          </button>
+        </div>
+      </div>
+
+      <div id="modal-edit-task" class="modal-edit-task modal closed">
+        <textarea id="edit-textarea" class="modal-edit-textarea"> </textarea>
+        <button
+          id="submit-edit-button"
+          class="submit-edit-button button button--green"
+        >
+          Submit changes
+        </button>
+      </div>
+
+      <div id="counter-validation-modal" class="modal modal-clear-tasks closed">
+        <p class="modal-clear-tasks__title">
+          You can't add more than 6 tasks. Delete old tasks or move something.
+        </p>
+        <button id="button-ok" class="button button--green">OK</button>
+      </div>
+
+      <div id="modalOverlay" class="modal-overlay closed"></div>
+    </div>
+
+    <script src="dist/script.js"></script>
+  </body>
+</html>
